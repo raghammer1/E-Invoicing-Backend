@@ -31,14 +31,17 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true })); // Limit the 
 // Use CORS middleware to allow requests from the frontend
 app.use(
   cors({
-    origin: 'http://localhost:3000', // Allow requests from this origin
+    origin: 'https://e-invoicing-frontend.vercel.app', // Allow requests from this origin
     credentials: true, // Allow credentials (cookies) to be sent with requests
   })
 );
 
 // Set custom headers for CORS
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000'); // Allow requests from this origin
+  res.setHeader(
+    'Access-Control-Allow-Origin',
+    'https://e-invoicing-frontend.vercel.app'
+  ); // Allow requests from this origin
   res.setHeader('Access-Control-Allow-Credentials', 'true'); // Allow credentials (cookies) to be sent with requests
   res.setHeader(
     'Access-Control-Allow-Methods',
