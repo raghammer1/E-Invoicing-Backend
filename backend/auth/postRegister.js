@@ -40,7 +40,7 @@ const postRegister = async (req, res) => {
     res.cookie('token', token, {
       secure: true, // Set to true in production with HTTPS
       maxAge: 24 * 60 * 60 * 1000, // Cookie expires in 24 hours
-      SameSite: 'none',
+      sameSite: 'none',
     });
 
     // Respond with the user's data upon successful registration
