@@ -37,7 +37,7 @@ const changeProfilePhoto = async (req, res) => {
     // Once the upload is finished, update the user's profile with the new image URL.
     uploadStream.on('finish', async () => {
       try {
-        const imageUrl = `http://localhost:5003/api/images/${filename}`; // Update this URL based on your setup.
+        const imageUrl = `https://e-invoicing-backend.vercel.app/api/images/${filename}`; // Update this URL based on your setup.
 
         // Update the user's profile picture.
         const updatedUser = await User.findByIdAndUpdate(
