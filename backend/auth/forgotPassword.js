@@ -40,17 +40,17 @@ const forgotPassword = async (req, res) => {
     const token = generateToken(); // Generate a new token
     await forgotPasswordModel.create({ email, token }); // Save token in the database
 
-    const resetLink = `http://localhost:3000/reset-password/${token}`; // Construct reset link
+    const resetLink = `https://e-invoicing-frontend.vercel.app/reset-password/${token}`; // Construct reset link
 
     let emailHTML = null; // Initialize email HTML content
 
     // Determine email content based on user account type
     if (!User) {
       emailHTML =
-        '<h1>You are not a hex member yet, please sign in to continue...</h1> <p>http://localhost:3000/register</p>';
+        '<h1>You are not a hex member yet, please sign in to continue...</h1> <p>https://e-invoicing-frontend.vercel.app/register</p>';
     } else if (User.googleId) {
       emailHTML =
-        '<h1>You are a hex member using google account, please log in using google to continue...</h1> <p>http://localhost:3000/login</p>';
+        '<h1>You are a hex member using google account, please log in using google to continue...</h1> <p>https://e-invoicing-frontend.vercel.app/login</p>';
     } else {
       emailHTML = `<div><img src="https://images.pexels.com/photos/15107263/pexels-photo-15107263/free-photo-of-night-sky-above-the-trees.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"/><h1>Your OTP</h1><p>Please reset your password from here: <strong> <a href="${resetLink}">Reset Password</a></strong></p></div>`;
     }
