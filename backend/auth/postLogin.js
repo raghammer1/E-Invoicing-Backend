@@ -28,7 +28,7 @@ const postLogin = async (req, res) => {
       res.cookie('token', token, {
         secure: true, // Consider true for HTTPS
         maxAge: 24 * 60 * 60 * 1000, // 24 hours in milliseconds
-        SameSite: None,
+        SameSite: 'none',
       });
 
       // Respond with user details
