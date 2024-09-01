@@ -38,10 +38,7 @@ app.use(
 
 // Set custom headers for CORS
 app.use((req, res, next) => {
-  res.setHeader(
-    'Access-Control-Allow-Origin',
-    'https://e-invoicing-frontend.vercel.app'
-  ); // Allow requests from this origin
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Allow requests from this origin
   res.setHeader('Access-Control-Allow-Credentials', 'true'); // Allow credentials (cookies) to be sent with requests
   res.setHeader(
     'Access-Control-Allow-Methods',
@@ -49,7 +46,7 @@ app.use((req, res, next) => {
   );
   res.setHeader(
     'Access-Control-Allow-Headers',
-    'X-Requested-With,content-type' // Allow these headers
+    '*' // Allow these headers
   );
   next(); // Pass control to the next middleware
 });
