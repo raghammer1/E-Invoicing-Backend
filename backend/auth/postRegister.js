@@ -45,7 +45,7 @@ const postRegister = async (req, res) => {
 
     // Respond with the user's data upon successful registration
     return res.status(201).json({
-      // token,
+      token,
       username: user.username,
       email: user.email,
       _id: user._id,

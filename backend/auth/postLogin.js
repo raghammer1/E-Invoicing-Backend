@@ -33,7 +33,7 @@ const postLogin = async (req, res) => {
 
       // Respond with user details
       return res.status(201).json({
-        // token,
+        token,
         username: user.username,
         email: user.email,
         _id: user._id,
