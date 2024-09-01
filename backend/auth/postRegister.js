@@ -38,7 +38,7 @@ const postRegister = async (req, res) => {
 
     // Set the JWT token in a cookie to log the user in
     res.cookie('token', token, {
-      secure: false, // Set to true in production with HTTPS
+      secure: true, // Set to true in production with HTTPS
       maxAge: 24 * 60 * 60 * 1000, // Cookie expires in 24 hours
       SameSite: None,
     });

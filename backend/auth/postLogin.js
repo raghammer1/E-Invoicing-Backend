@@ -26,7 +26,7 @@ const postLogin = async (req, res) => {
 
       // Set token in a cookie
       res.cookie('token', token, {
-        secure: false, // Consider true for HTTPS
+        secure: true, // Consider true for HTTPS
         maxAge: 24 * 60 * 60 * 1000, // 24 hours in milliseconds
         SameSite: None,
       });
